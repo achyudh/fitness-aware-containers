@@ -8,8 +8,8 @@ machine_types = ['f1-micro','g1-small','n1-highcpu-2','n1-highcpu-4','n1-highcpu
 cluster_name = "lp-%s-%s-%s" %(machine_types[8], zones[0], str(num_nodes))
 
 # subprocess.run('gcloud auth application-default login', shell=True)
-# subprocess.run('gcloud container clusters create %s -m %s -z %s --num-nodes=%s' % (cluster_name, machine_types[8], zones[0], str(num_nodes)), shell=True)
-# subprocess.run('gcloud container clusters get-credentials ' + cluster_name, shell=True)
+subprocess.run('gcloud container clusters create %s -m %s -z %s --num-nodes=%s' % (cluster_name, machine_types[8], zones[0], str(num_nodes)), shell=True)
+subprocess.run('gcloud container clusters get-credentials ' + cluster_name, shell=True)
 subprocess.run('kubectl run linpack-node --image=asia.gcr.io/my-project-1470428279137/linpack --port=8080', shell=True)
 subprocess.run('kubectl get deployments && kubectl get pods', shell=True)
 
