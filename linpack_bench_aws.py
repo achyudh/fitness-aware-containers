@@ -4,9 +4,7 @@ import boto3
 import time
 from requests import get
 
-ACCESS_KEY = 'AKIAI3AAP7TDIZEVKLTQ'
-SECRET_KEY = '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'
-INPUT_TYPE = 'ENTER'
+
 
 ip = get('https://api.ipify.org').text
 """subprocess.run('aws ecr get-login > login.txt',shell=True)
